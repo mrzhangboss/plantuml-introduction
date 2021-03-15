@@ -1,0 +1,29 @@
+@startuml
+'时序图
+
+actor 系统管理员 as user
+
+autonumber
+participant DeptController as con
+control DeptService as service
+control DeptDao as dao
+participant DB as db
+
+user -> con: service(HttpServletRequest, HttpServletResponse)
+note over user, con: /cm/settings/dept/list.do
+con -> con: 获取servletPath
+con -> con: doList(HttpServletRequest, HttpServletResponse)
+con -> service: getAll()
+service -> dao:  getAll()
+dao -> db: 执行查询语句(select * from tbl_dept)
+db -> dao: List<Dept>
+dao -> service: List<Dept>
+service -> con: List<Dept>
+con -> con: 将List<Dept>转换成JSON
+note over con, service: 描述JSON的格式
+
+con -> user: 响应JSON
+user -> user: 渲染解析JSON呈现数据
+
+
+@enduml

@@ -1,0 +1,12 @@
+@startuml
+'聚合关系
+
+class ClassRoom{
+    List<Student> students
+}
+
+class Student {}
+
+ClassRoom o- Student
+
+@enduml

@@ -1,0 +1,12 @@
+@startuml
+'组合关系
+
+class People {
+    List<Hand> hands
+}
+
+class Hand
+
+People *- Hand
+
+@enduml

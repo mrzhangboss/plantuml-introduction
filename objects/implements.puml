@@ -1,0 +1,15 @@
+@startuml
+'实现关系
+
+' 使用代码实现
+interface FoodMenu
+class Cooker implements FoodMenu
+
+'使用线连接
+
+interface List
+List <|--[dashed] ArrayList
+
+
+
+@enduml

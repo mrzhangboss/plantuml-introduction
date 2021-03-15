@@ -1,0 +1,12 @@
+@startuml
+'两种实现方式
+
+'第一种使用类 猫是动物
+class Animal{}
+class Cat extends Animal{}
+
+' 第二种直接使用标注 女人也是人
+People <|-- Woman
+
+@enduml
+

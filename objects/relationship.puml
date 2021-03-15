@@ -1,0 +1,25 @@
+@startuml
+'关联关系
+class Programmer {
+   Computer coder
+   +void {abstract} start(int timeout)
+   +void start2(int timeout)
+}
+
+class Computer <<general>>{}
+
+Programmer -> Computer
+note right on link #blue
+实线箭头表示:通过Programmer可以
+找到Computer,Programmer对象当中
+有一个Computer的属性。
+end note
+
+class Human {
+  Human wife
+  Human husband
+}
+
+Human -> Human
+
+@enduml
